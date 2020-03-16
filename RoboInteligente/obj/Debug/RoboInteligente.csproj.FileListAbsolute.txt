@@ -1,0 +1,6 @@
+C:\Desenvolvimento\RoboInteligente\RoboInteligente\bin\Debug\RoboInteligente.exe.config
+C:\Desenvolvimento\RoboInteligente\RoboInteligente\bin\Debug\RoboInteligente.exe
+C:\Desenvolvimento\RoboInteligente\RoboInteligente\bin\Debug\RoboInteligente.pdb
+C:\Desenvolvimento\RoboInteligente\RoboInteligente\obj\Debug\RoboInteligente.csprojAssemblyReference.cache
+C:\Desenvolvimento\RoboInteligente\RoboInteligente\obj\Debug\RoboInteligente.exe
+C:\Desenvolvimento\RoboInteligente\RoboInteligente\obj\Debug\RoboInteligente.pdb
