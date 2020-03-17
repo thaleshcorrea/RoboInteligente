@@ -33,6 +33,8 @@ namespace RoboInteligente
 
         public int[,] grid;
 
+        List<expandir> filaPrioridade;
+
         public RoboColetor()
         {
             CriarGridInicial();
@@ -81,11 +83,11 @@ namespace RoboInteligente
         /// </summary>
         public bool ColetarLixo()
         {
-            for(int i = 0; i < LINHAS; i++)
+            for (int i = 0; i < LINHAS; i++)
             {
-                for(int j = 0; j < COLUNAS; j++)
+                for (int j = 0; j < COLUNAS; j++)
                 {
-                    if(grid[i, j] == (int)EEstados.LIXO)
+                    if (grid[i, j] == (int)EEstados.LIXO)
                     {
                         return true;
                     }
@@ -102,9 +104,17 @@ namespace RoboInteligente
             // Verificar se robo está cheio
             // Se não (Verfica qual o próximo lixo para expandir)
             // Se sim (Verifica qual o ponto de coleta para expandir)
-            if(armazenamentoRobo < ARMAZENAMENTO_MAX_ROBO)
-            {
+            filaPrioridade = new List<expandir>();
 
+            if (armazenamentoRobo < ARMAZENAMENTO_MAX_ROBO)
+            {
+                for (int i = 0; i < LINHAS; i++)
+                {
+                    for (int j = 0; j < COLUNAS; j++)
+                    {
+
+                    }
+                }
             }
             else
             {
