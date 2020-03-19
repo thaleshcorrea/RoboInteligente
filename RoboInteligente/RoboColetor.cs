@@ -17,6 +17,9 @@ namespace RoboInteligente
         public int cargaAtualRobo = 20;
         public int armazenamentoRobo = 0;
 
+        int linhaRoboParou = 0;
+        int colunaRoboParou = 0;
+
         private int linhaLixo1 = 1;
         private int linhaLixo2 = 2;
         private int linhaLixo3 = 3;
@@ -197,7 +200,7 @@ namespace RoboInteligente
                         filaPrioridade.AddRange(RotasPostosDeColetaComArmazenamentoQuaseCheio(linhaLixo3, colunaLixo3));
                     }
                 }
-                else 
+                else
                 {
                     filaPrioridade.AddRange(RotasPostosDeColeta(linhaRobo, colunaRobo));
                 }
@@ -220,18 +223,13 @@ namespace RoboInteligente
         /// <summary>
         /// Mover o robô para 
         /// </summary>
-        public string MoverRobo(List<Expandir> filaPrioridade)
+        public string IrParaObjetivo(List<Expandir> filaPrioridade)
         {
             Expandir expandir = filaPrioridade.FirstOrDefault();
             expandir.custo = CalcularCusto(linhaRobo, colunaRobo, expandir.linha, expandir.coluna);
 
             linhaRobo = expandir.linha;
             colunaRobo = expandir.coluna;
-
-            if(cargaAtualRobo < expandir.custo)
-            {
-
-            }
 
             if (expandir.acao == EAcoes.PegarLixo)
             {
@@ -247,7 +245,7 @@ namespace RoboInteligente
 
             cargaAtualRobo -= expandir.custo;
 
-            return $"Carga(-{expandir.custo}) (Mover robo para linha({expandir.linha}) coluna({expandir.coluna}): {expandir.acao})";
+            return $"Carga(-{expandir.custo}) (Mover robo para linha({linhaRobo}) coluna({colunaRobo}): {expandir.acao})";
         }
 
         /// <summary>
@@ -368,7 +366,6 @@ namespace RoboInteligente
             ResetarHeuristica();
             return filaPrioridade;
         }
-
 
 
         /// <summary>

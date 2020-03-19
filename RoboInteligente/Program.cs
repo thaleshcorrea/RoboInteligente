@@ -11,14 +11,16 @@ namespace RoboInteligente
         {
             RoboColetor roboColetor = new RoboColetor();
 
-            while (roboColetor.ColetarLixo() > 0 || roboColetor.armazenamentoRobo > 0)
+            while ((roboColetor.ColetarLixo() > 0 || roboColetor.armazenamentoRobo > 0) && roboColetor.cargaAtualRobo > 0)
             {
                 List<Expandir> filaPrioridade = roboColetor.FuncaoAvaliacao();
-                string acao = roboColetor.MoverRobo(filaPrioridade);
+                string acao = roboColetor.IrParaObjetivo(filaPrioridade);
                 Console.WriteLine(acao);
             }
 
-            Console.WriteLine($"{Environment.NewLine}Carga: {roboColetor.cargaAtualRobo}/20");
+            Console.WriteLine($"{Environment.NewLine}ROBÔ:");
+            Console.WriteLine($"POSICÃO ATUAL: ({roboColetor.linhaRobo}/{roboColetor.colunaRobo})");
+            Console.WriteLine($"CARGA ATUAL: {roboColetor.cargaAtualRobo}/20");
 
             Console.ReadKey();
         }
