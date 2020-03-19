@@ -1,10 +1,12 @@
-﻿namespace RoboInteligente
+﻿using System.ComponentModel;
+
+namespace RoboInteligente
 {
     public enum EAcoes
     {
-        MOVER_VAZIO = 1,
-        MOVER_CHEIO = 2,
-        PEGAR_ITEM = 1,
-        LARGAR_ITEM = 0
+        [Description("fazer coleta")]
+        FazerColeta,
+        [Description("pegar lixo")]
+        PegarLixo,
     }
 }

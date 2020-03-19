@@ -44,8 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EAcoes.cs" />
+    <Compile Include="ECustos.cs" />
     <Compile Include="EEstados.cs" />
-    <Compile Include="expandir.cs" />
+    <Compile Include="Expandir.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoboColetor.cs" />

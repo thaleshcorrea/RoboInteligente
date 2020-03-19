@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Reflection;
 
 namespace RoboInteligente
 {
@@ -14,10 +11,14 @@ namespace RoboInteligente
         {
             RoboColetor roboColetor = new RoboColetor();
 
-            while (roboColetor.ColetarLixo())
+            while (roboColetor.ColetarLixo() > 0 || roboColetor.armazenamentoRobo > 0)
             {
-
+                List<Expandir> filaPrioridade = roboColetor.FuncaoAvaliacao();
+                string acao = roboColetor.MoverRobo(filaPrioridade);
+                Console.WriteLine(acao);
             }
+
+            Console.WriteLine($"{Environment.NewLine}Carga: {roboColetor.cargaAtualRobo}/20");
 
             Console.ReadKey();
         }
